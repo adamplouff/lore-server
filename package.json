@@ -12,6 +12,8 @@
     "server"
   ],
   "author": "Adam Plouff",
+  "homepage": "https://github.com/adamplouff/lore-server",
+  "repository": "adamplouff/lore-server",
   "license": "Apache-2.0",
   "dependencies": {
     "body-parser": "^1.19.0",
