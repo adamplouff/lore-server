@@ -1,6 +1,6 @@
 {
   "name": "lore-server",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A small server that runs inside of Adobe CEP extensions to listen for fetch() messages.",
   "main": "index.js",
   "scripts": {
