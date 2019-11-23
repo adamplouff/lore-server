@@ -40,7 +40,7 @@ console.log(server);
 
 ```js
 // If neither port nor address are defined, they default to:
-// http://127.0.0.1:3030
+// http://127.0.0.1:3200
 const lore = new Lore();
 
 let msgObj = {
