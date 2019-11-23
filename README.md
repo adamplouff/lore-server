@@ -92,8 +92,8 @@ function loreFilter(msg) {
   }
 }
 
-// port# and message data
-lore.listner(loreFilter);
+// message data
+lore.listener(loreFilter);
 ```
 
 The function `loreFilter()` is passed into the `lore.listener()` and parses the data that accompanies any messages received on port 9320. The data contained within this message is arbitrary and must be handled by the function passed into the listener.
