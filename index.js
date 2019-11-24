@@ -29,7 +29,7 @@ function logError(error) {
 // Exports all functions needed to be imported from another file.
 // Any of these functions can be imported via:
 // import { loreListener, loreMessage } from 'lore'
-class Lore {
+export default class {
   // constructor parameters are ones from any class creation, e.g. new Lore(port, address)
   constructor(port, address) {
     // We define things which other functions need access to here:
@@ -112,5 +112,3 @@ class Lore {
       .catch(logError);
   }
 }
-
-export default Lore;
