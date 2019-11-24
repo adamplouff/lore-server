@@ -100,6 +100,6 @@ The function `loreFilter()` is passed into the `lore.listener()` and parses the 
 
 ## About
 
-This project is base on how heavily I personally rely on Adobe's [Vulcan](https://github.com/Adobe-CEP/CEP-Resources/blob/master/CEP_9.x/Vulcan.js) library for communication between Adobe extension panels. An attept to extend this concept outside of Adobe apps lead me to [this article](https://developers.google.com/web/ilt/pwa/lab-fetch-api) on the use of `fetch()` and the creation of localhost servers. **Lore** wraps up a lot of this to simplify server setup and fetch commands.
+This project is based on how heavily I personally rely on Adobe's [Vulcan](https://github.com/Adobe-CEP/CEP-Resources/blob/master/CEP_9.x/Vulcan.js) library for communication between Adobe extension panels. An attempt to extend this concept outside of Adobe apps led me to [this article](https://developers.google.com/web/ilt/pwa/lab-fetch-api) on the use of `fetch()` and the creation of localhost servers. **Lore** wraps up a lot of this to simplify server setup and fetch commands.
 
 Thanks to [Tom Scharstein](https://github.com/Inventsable) for ongoing brain power and clarifying the process of creating a module.
