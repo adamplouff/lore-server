@@ -36,21 +36,19 @@ export default class {
     this.port = port || PORT;
     this.address = address || HOST;
     // If we only need to do code once, it makes more sense to do so here than every time a listen() or message() func is called
-    this.app = express();
-    this.headers = new Headers();
+    this.app = (express) ? express() : null;
     this.init();
   }
   init() {
-    this.app.use((req, res, next) => {
-      // enable CORS
-      res.set("Access-Control-Allow-Origin", "*");
-      res.set("Access-Control-Allow-Methods", "POST, GET, OPTIONS");
-      res.set("Access-Control-Allow-Headers", "X-CUSTOM, Content-Type");
-
-      this.headers.append("Content-Type", "application/json");
-      next();
-    });
-
+    if (express) {
+      this.app.use((req, res, next) => {
+          // enable CORS
+          res.set("Access-Control-Allow-Origin", "*");
+          res.set("Access-Control-Allow-Methods", "POST, GET, OPTIONS");
+          res.set("Access-Control-Allow-Headers", "X-CUSTOM, Content-Type");
+          next();
+        });  
+    }
     // Anything else this Lore instance needs to do before it begins listening/sending should happen here, or above
   }
 
@@ -103,9 +101,11 @@ export default class {
   message(data) {
     // Compare `http://${this.address}:${this.port}/` to 'http://127.0.0.1:'+ port +'/'
     // Is this easier to read, or is it only because I'm so used to template literals?
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
     fetch(`http://${this.address}:${this.port}/`, {
       method: "POST",
-      headers: this.headers,
+      headers: headers,
       body: JSON.stringify(data)
     })
       .then(validateResponse)
